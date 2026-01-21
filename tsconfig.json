@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    // --- PENGATURAN FILE ---
+    "rootDir": "./src",
+    "outDir": "./dist",
+    
+    // --- PENTING UNTUK TYPEORM (WAJIB ADA) ---
+    "experimentalDecorators": true,  // <-- Izinkan penggunaan @Entity, @Column
+    "emitDecoratorMetadata": true,   // <-- Izinkan TypeORM baca tipe data kolom otomatis
+
+    // --- TARGET COMPILER ---
+    "target": "es2016",              // Versi JS yang aman dan cukup modern
+    "module": "commonjs",            // Standar Node.js paling stabil untuk TypeORM
+    "moduleResolution": "node",
+    
+    // --- STRICT TYPE CHECKING (Bagus untuk safety) ---
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false, // <-- Set False agar tidak perlu inisialisasi properti entity di constructor
+
+    // --- LAINNYA ---
+    "esModuleInterop": true,         // Agar import library JS biasa tidak error
+    "skipLibCheck": true,            // Mempercepat compile
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
